@@ -5,7 +5,7 @@ cmd({
     pattern: "pair",
     alias: ["getpair", "clonebot"],
     react: "✅",
-    desc: "Get pairing code for KHAN-MD bot",
+    desc: "Get pairing code for VINU-MD bot",
     category: "download",
     use: ".pair +923477868XXX",
     filename: __filename
@@ -20,14 +20,14 @@ cmd({
         }
 
         // Make API request to get pairing code
-        const response = await axios.get(`https://khanxmd.onrender.com/pair?phone=${encodeURIComponent(phoneNumber)}`);
+        const response = await axios.get(`https://tharusha-mdsession-1.onrender.com/pair/pair?phone=${encodeURIComponent(phoneNumber)}`);
         
         if (!response.data || !response.data.code) {
             return await reply("❌ Failed to retrieve pairing code. Please try again later.");
         }
 
         const pairingCode = response.data.code;
-        const doneMessage = "> *KHAN-MD PAIRING COMPLETED*";
+        const doneMessage = "> *VINU-MD PAIRING COMPLETED*";
 
         // Send initial message with formatting
         await reply(`${doneMessage}\n\n*Your pairing code is:* ${pairingCode}`);
